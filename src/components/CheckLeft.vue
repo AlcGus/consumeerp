@@ -30,7 +30,7 @@
       </el-menu-item>
       <el-menu-item index="3">
         <i class="el-icon-setting"></i>
-        <span slot="title">导航三</span>
+        <span slot="title">导航三hhh</span>
       </el-menu-item>
     </el-menu>
   </el-col>
