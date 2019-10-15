@@ -10,9 +10,9 @@
           :value="item.value"
         ></el-option>
       </el-select>
-      <span class="selecttime">日期</span><el-date-picker v-model="value1" type="date" placeholder="选择日期"></el-date-picker>
+      <span class="selecttime">日期：</span><el-date-picker v-model="value1" type="date" placeholder="选择日期"></el-date-picker>
       <span>至</span><el-date-picker v-model="value2" type="date" placeholder="选择日期"></el-date-picker>
-      <el-button type="primary">搜素</el-button>
+      <el-button class="btnsel" type="primary">搜素</el-button>
     </div>
     <!-- <div class="maintable"> -->
       <el-table :data="tableData2" style="width:82%" :row-class-name="tableRowClassName">
@@ -115,5 +115,8 @@ export default {
 }
 .el-date-editor{
     margin: 0 10px;
+}
+.btnsel{
+  margin-left:10px;
 }
 </style>

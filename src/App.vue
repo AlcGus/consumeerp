@@ -1,9 +1,8 @@
 <template>
   <div id="app">
       <el-header>Header</el-header>
-        <checkleft></checkleft>
-        <mainc></mainc>
-        <!-- <el-main><mainc></mainc></el-main> -->
+      <checkleft></checkleft>
+      <router-view></router-view>
   </div>
 </template>
 
