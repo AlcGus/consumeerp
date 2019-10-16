@@ -3,6 +3,25 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 
+// echarts插件
+import echarts from 'echarts'
+
+// import 'echarts/lib/chart/pie'
+
+// 引入需要的 echarts的交互组件
+// import 'echarts/lib/component/tooltip';
+// import 'echarts/lib/component/legend';
+// import 'echarts/lib/component/title';
+// import 'echarts/lib/component/visualMap';
+// import 'echarts/lib/component/toolbox';
+
+// import 'src/assets/styles/variable.scss';
+// import 'src/assets/styles/base.scss';
+// import 'src/assets/styles/common.scss';
+// import 'src/assets/styles/iconfont.css';
+
+Vue.prototype.$echarts = echarts
+
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 

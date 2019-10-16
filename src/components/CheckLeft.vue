@@ -1,5 +1,5 @@
 <template>
-  <div class="checkleft">
+  <div class=".checkleft">
     <div class="checkleftmenu">
       <el-menu
         class="el-menu-vertical-demo"
@@ -60,9 +60,7 @@ export default {
 </script>
 
 <style>
-.checkleftmenu {
-  width: 17%;
-  height: 100%;
+.checkleft{
   float: left;
 }
 </style>
