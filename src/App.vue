@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-header>Header</el-header>
+    <el-header>陈孟婷专属记账</el-header>
     <el-aside style="width: 17%;">
       <checkleft></checkleft>
     </el-aside>
@@ -26,7 +26,7 @@ export default {
   /* overflow-y:hidden; */
 }
 .el-header {
-  background-color: #545c64;
+  background-color: #99cc99;
   color: #fff;
   text-align: left;
   line-height: 60px;

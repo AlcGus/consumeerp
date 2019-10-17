@@ -2,7 +2,8 @@
   <div id="tomain">
     <div id="main">
       <div class="mainheader">
-        <el-button type="primary" round @click="dialogFormVisible = true">添加账单</el-button>
+        <!-- dialogFormVisible = true -->
+        <el-button type="primary" round @click="linktoAdd()">添加账单</el-button>
         <el-select @change="remoteMethod" clearable v-model="value" placeholder="请选择">
           <el-option
             v-for="item in options"
@@ -38,7 +39,7 @@
           ></el-table-column>
           <el-table-column fixed="right" header-align="center" align="center" label="操作">
             <template slot-scope="scope">
-              <el-button type="text" size="small">编辑</el-button>
+              <el-button type="text" @click="linktoAdd(scope.$index)" size="small">编辑</el-button>
               <el-button
                 @click.native.prevent="deleteRow(scope.$index, tableData)"
                 type="text"
@@ -121,6 +122,20 @@ export default {
     };
   },
   methods: {
+    linktoAdd(index = "") {
+      let addtitle = "";
+      let addform = {};
+      if (index === "") {
+        addtitle = "新增消费记录";
+      } else {
+        addtitle = "修改消费记录";
+        addform = this.tableData[index];
+      }
+      this.$router.push({
+        name: "addrecord",
+        params: { title: addtitle, addform: addform ,id:index}
+      });
+    },
     tableRowClassName({ row, rowIndex }) {
       if (row.moeny < 300) {
         return "";
@@ -137,20 +152,19 @@ export default {
       this.$http
         .get(src)
         .then(res => {
-          if (sel != "") { 
+          if (sel != "") {
             this.tableData = res.data.filter(element => {
               return element.ttype === sel;
             });
-          }else if (starttime != null && endtime != null) {
+          } else if (starttime != null && endtime != null) {
             this.tableData = res.data.filter(element => {
-              console.log(Date(element.data).getTime());
-              console.log(Date(starttime).getTime());
-              console.log(Date(endtime).getTime());            
-              
-              return Date(element.data).getTime() >= Date(starttime).getTime() && Date(element.data).getTime() <= Date(endtime).getTime();
+              let nowdate = new Date(element.date).getTime();
+              let startdate = new Date(starttime).getTime();
+              let enddate = new Date(endtime).getTime();
+              return nowdate >= startdate && nowdate <= enddate;
             });
           } else {
-            this.tableData = res.data;            
+            this.tableData = res.data;
           }
           this.total = this.tableData.length;
         })

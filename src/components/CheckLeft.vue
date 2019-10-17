@@ -63,5 +63,8 @@ export default {
 .checkleft{
   float: left;
 }
+.el-menu-item{
+  
+}
 </style>
 
