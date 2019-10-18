@@ -1,10 +1,19 @@
 <template>
   <div id="app">
-    <el-header>陈孟婷专属记账</el-header>
-    <el-aside style="width: 17%;">
-      <checkleft></checkleft>
-    </el-aside>
-    <router-view></router-view>
+    <el-container>
+      <el-header>
+        <img src="../static/logo.jpg" alt srcset />
+        <p>熊猫记账</p>
+      </el-header>
+      <el-container>
+        <el-aside style="width: 17%;">
+          <checkleft></checkleft>
+        </el-aside>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -22,23 +31,32 @@ export default {
 </script>
 
 <style>
-*{
-  /* overflow-y:hidden; */
+#app {
+  overflow: auto;
 }
 .el-header {
-  background-color: #99cc99;
+  background-color: #545c64;
   color: #fff;
-  text-align: left;
   line-height: 60px;
 }
-.el-aside {
-  /* display: block;
-  position: absolute;
-  left: 0;
-  top: 70px;
-  bottom: 0;
-  background-color: #545c64;
-  border-right-width: 0px; */
+.el-header img {
+  width: 50px;
+  height: 50px;
+  margin-left: 50px;
+  margin-top: 10px;
+  border-radius: 50%;
   float: left;
+}
+.el-header p {
+  float: right;
+  margin: 0;
+  margin-right: 20px;
+}
+.el-aside {
+  float: left;
+}
+.el-main {
+  padding: 0px;
+  background-color: #f0f0f0;
 }
 </style>

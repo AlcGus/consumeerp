@@ -72,14 +72,14 @@ export default {
           }
         ],
         ttype: [
-          { required: true, message: "请选择消费类型", trigger: "change" }
+          { required: true, message: "请选择消费类型", trigger: "blur" }
         ],
         date: [
           {
             type: "date",
             required: true,
             message: "请选择消费日期",
-            trigger: "change"
+            trigger: "blur"
           }
         ],
         address: [

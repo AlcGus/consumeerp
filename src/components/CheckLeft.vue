@@ -32,19 +32,19 @@ export default {
       sider_menu_data: [
         {
           path: "/home",
-          title: "导航1",
+          title: "消费统计",
           icon: "el-icon-menu"
         },
         {
           path: "/main",
-          title: "导航二",
+          title: "消费账单",
           icon: "el-icon-location"
         },
-        {
-          path: "",
-          title: "导航三",
-          icon: "el-icon-setting"
-        }
+        // {
+        //   path: "",
+        //   title: "导航三",
+        //   icon: "el-icon-setting"
+        // }
       ]
     };
   },
@@ -60,11 +60,5 @@ export default {
 </script>
 
 <style>
-.checkleft{
-  float: left;
-}
-.el-menu-item{
-  
-}
 </style>
 

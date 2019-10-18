@@ -58,41 +58,6 @@
             :total="total"
           ></el-pagination>
         </div>
-        <el-dialog title="消费记录" :label-width="formLabelWidth" :visible.sync="dialogFormVisible">
-          <el-form :model="form" resetField>
-            <el-form-item label="日期" :label-width="formLabelWidth">
-              <el-date-picker
-                v-model="form.date"
-                value-format="yyyy-MM-dd"
-                type="date"
-                placeholder="选择日期"
-              ></el-date-picker>
-            </el-form-item>
-            <el-form-item label="姓名" :label-width="formLabelWidth">
-              <el-input v-model="form.name" auto-complete="off" style="width:220px;"></el-input>
-            </el-form-item>
-            <el-form-item label="消费金额" :label-width="formLabelWidth">
-              <el-input v-model="form.moeny" auto-complete="off" style="width:220px;"></el-input>
-            </el-form-item>
-            <el-form-item label="消费类型" :label-width="formLabelWidth">
-              <el-select v-model="form.ttype" placeholder="请选择">
-                <el-option
-                  v-for="item in options"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value"
-                ></el-option>
-              </el-select>
-            </el-form-item>
-            <el-form-item label="地址" :label-width="formLabelWidth">
-              <el-input v-model="form.address" auto-complete="off"></el-input>
-            </el-form-item>
-          </el-form>
-          <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="btnclickOk">确 定</el-button>
-          </div>
-        </el-dialog>
       </div>
     </div>
   </div>
@@ -108,9 +73,8 @@ export default {
       value1: null,
       value2: null,
       total: 0,
-      pagesize: 8,
+      pagesize: 11,
       currentPage: 1,
-      dialogFormVisible: false,
       form: {
         date: "",
         name: "",
@@ -118,7 +82,6 @@ export default {
         ttype: "",
         address: ""
       },
-      formLabelWidth: "120px"
     };
   },
   methods: {
@@ -190,10 +153,6 @@ export default {
     current_change(currentPage) {
       this.currentPage = currentPage;
     },
-    btnclickOk() {
-      this.tableData.push(this.form);
-      this.dialogFormVisible = false;
-    },
     deleteRow(index, rows) {
       rows.splice(index, 1);
     }
@@ -213,19 +172,11 @@ export default {
 </script>
 
 <style>
-#tomain {
-  width: 83%;
-  float: left;
-  background-color: #f0f0f0;
-  /* border: 1px solid red;  */
-}
 #main {
   width: 98%;
   margin: 10px auto;
   padding-bottom: 10px;
   background-color: #fff;
-  /* border: 1px solid red; */
-  /* box-shadow:5px 2px 6px #000 */
 }
 .el-table {
   padding-left: 5px;
@@ -234,9 +185,6 @@ export default {
 .el-table .warning-row {
   background: #e6a23c;
 }
-/* .el-table {
-  left: 10px;
-} */
 
 .el-table .danger-row {
   background: #f56c6c;
@@ -256,7 +204,6 @@ export default {
 }
 .selecttime {
   margin-left: 20px;
-  /* margin-right: 10px; */
 }
 .mainheader .el-date-editor {
   margin: 0 10px;
@@ -265,8 +212,6 @@ export default {
   margin-left: 5px;
 }
 .dpage {
-  /* margin-left: 10px; */
-  /* border: 1px solid black; */
   height: 30px;
 }
 .fly {

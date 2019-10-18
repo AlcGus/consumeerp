@@ -14,13 +14,17 @@ Router.prototype.push = function push(location){
   return routerPush.call(this,location).catch(error => error)
 }
 
-const CheckLeft = () => import('../components/CheckLeft.vue')
 const Home = () => import('../components/Home.vue')
 const Main = () => import('../components/Main.vue')
 const AddRecord = () => import('../components/AddRecord.vue')
 
 export default new Router({
-  routes: [{
+  routes: [
+    {
+      path:"/",
+      component:Home
+    },
+    {
       path: '/home',
       component: Home
     },

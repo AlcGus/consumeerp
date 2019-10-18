@@ -6,7 +6,7 @@
       <el-col :span="24" style="padding-bottom: 8px;">
         <el-card>
           <div slot="header">网站访客来源分析</div>
-           <div id="main" style="width: 600px;height: 400px;"></div>
+          <div id="main" style="width: 600px;height: 400px;"></div>
         </el-card>
       </el-col>
       <el-col :span="12" style="padding-right: 4px;">
@@ -18,7 +18,7 @@
       <el-col :span="12" style="padding-left: 4px;">
         <el-card>
           <div slot="header">未来一周天气变化</div>
-         <div id="main2" style="width: 600px;height: 400px;"></div>
+          <div id="main2" style="width: 600px;height: 400px;"></div>
         </el-card>
       </el-col>
     </el-row>
@@ -95,24 +95,12 @@ export default {
 };
 </script>
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-/* overflow:auto; */
-}
 #tohome {
-  width: 83%;
-  float: left;
-  background-color: #f0f0f0;
-  /* border: 1px solid red;  */
-}
-#main {
   width: 98%;
   margin: 10px auto;
-  padding-bottom: 10px;
-  background-color: #fff;
-  /* border: 1px solid red; */
-  /* box-shadow:5px 2px 6px #000 */
+}
+#main,
+#main1，#main2 {
+  margin: 0 auto;
 }
 </style>
